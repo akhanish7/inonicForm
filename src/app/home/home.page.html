@@ -1,20 +1,231 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<form>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-item>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-</ion-content>
+    <ion-label position="floating">Customer Name</ion-label>
+    <ion-input ngModel name="name" #name (change)=log(name) type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-list>
+      <ion-radio-group value="new">
+        <!-- <ion-list-header>
+          <ion-label>Existing</ion-label>
+        </ion-list-header> -->
+        <ion-item>
+          <ion-label>Existing</ion-label>
+          <ion-radio slot="start" value="false"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>New Customer</ion-label>
+          <ion-radio slot="start" value="true"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+
+
+    </ion-list>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label>Gender</ion-label>
+    <ion-select ngModel name="gender" #gender (ionChange)=log(gender) placeholder="Select One">
+      <ion-select-option value="male">Male</ion-select-option>
+      <ion-select-option value="female">Female</ion-select-option>
+      <ion-select-option value="others">Others</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+
+
+
+  <ion-item>
+    <ion-label>Age Range</ion-label>
+    <ion-select ngModel name="ageRange" #ageRange (ionChange)=log(ageRange) placeholder="Select One">
+      <ion-select-option value="less than 30">Less than 30 Years</ion-select-option>
+      <ion-select-option value="30-45">30-45 Years</ion-select-option>
+      <ion-select-option value="45-55">45-55 Years</ion-select-option>
+      <ion-select-option value="55-65">55-65 Years</ion-select-option>
+      <ion-select-option value="65-70">65-70 Years</ion-select-option>
+      <ion-select-option value="more than 70">More than 70 Years</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label>Nationality Type</ion-label>
+    <ion-select ngModel name="nationality" #nationality (ionChange)=log(nationality) placeholder="Select One">
+      <ion-select-option value="omani">Omani</ion-select-option>
+      <ion-select-option value="expat">Expat</ion-select-option>
+      <ion-select-option value="gcc">GCC</ion-select-option>
+
+
+    </ion-select>
+  </ion-item>
+
+
+
+</form>
+
+
+
+
+
+
+<form>
+
+  <ion-item>
+
+    <ion-label position="floating">Net Worth(OMR '000)</ion-label>
+    <ion-input ngModel name="netWorthValue" #netWorthValue (change)=log(netWorthValue) type="number"></ion-input>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label>Net Worth Support Documents</ion-label>
+    <ion-select ngModel name="supportDocuments" #supportDocuments (ionChange)=log(supportDocuments)
+      placeholder="Select One">
+      <ion-select-option value="
+auditor A">Auditor A</ion-select-option>
+      <ion-select-option value="
+auditor B">Auditor B</ion-select-option>
+      <ion-select-option value="
+auditor C">Auditor C</ion-select-option>
+      <ion-select-option value="self declared">Self Declared</ion-select-option>
+      <ion-select-option value="no information">No Information</ion-select-option>
+
+    </ion-select>
+  </ion-item>
+
+
+
+  <ion-item>
+    <ion-label>Repayment Source</ion-label>
+    <ion-select ngModel name="repaymentSource" #repaymentSource (ionChange)=log(repaymentSource)
+      placeholder="Select One">
+      <ion-select-option value="
+  assigned cash flow above 150%">Assigned Cash Flow above 150%</ion-select-option>
+      <ion-select-option value="
+  assigned cash flow above 100%-150%">Assigned Cash Flow above 100%-150%</ion-select-option>
+      <ion-select-option value="
+  assigned cash flow below 100%">Assigned Cash Flow below 100%</ion-select-option>
+      <ion-select-option value="identifed cash flow not assigned">Identifed Cash flow not assigned</ion-select-option>
+      <ion-select-option value="unidentified cash flow">Unidentified Cash flow"</ion-select-option>
+
+    </ion-select>
+  </ion-item>
+
+
+  <ion-item>
+
+    <ion-label position="floating">Proposed total limit(OMR '000)</ion-label>
+    <ion-input ngModel name="proposedTotalLimit" #proposedTotalLimit (change)=log(proposedTotalLimit) type="number">
+    </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Total Existing Limit in all banks-BCSB (OMR '000)</ion-label>
+    <ion-input ngModel name="totalExistingLimit" #totalExistingLimit (change)=log(totalExistingLimit) type="number">
+    </ion-input>
+  </ion-item>
+
+
+
+  <ion-item>
+    <ion-label>Customer CBO-BCSB status</ion-label>
+    <ion-select ngModel name="bcsbStatus" #bcsbStatus (ionChange)=log(bcsbStatus) placeholder="Select One">
+      <ion-select-option value="
+  NORMAL">NORMAL</ion-select-option>
+      <ion-select-option value="
+  WATCHLIST (O.L.E.M)">WATCHLIST (O.L.E.M</ion-select-option>
+      <ion-select-option value="
+  SUB-STANDARD">SUB-STANDARD</ion-select-option>
+      <ion-select-option value="DOUBTFUL">DOUBTFUL</ion-select-option>
+      <ion-select-option value="LOSS">LOSS</ion-select-option>
+      <ion-select-option value="no information (no history)">No Information (no history)</ion-select-option>
+
+    </ion-select>
+  </ion-item>
+
+
+
+  <ion-item>
+    <ion-label>Customer related company CBO-BCSB status</ion-label>
+    <ion-select ngModel name="bcsbRelatedCompaniesStatus" #bcsbRelatedCompaniesStatus
+      (ionChange)=log(bcsbRelatedCompaniesStatus) placeholder="Select One">
+      <ion-select-option value="
+    NORMAL">NORMAL</ion-select-option>
+      <ion-select-option value="
+    WATCHLIST (O.L.E.M)">WATCHLIST (O.L.E.M</ion-select-option>
+      <ion-select-option value="
+    SUB-STANDARD">SUB-STANDARD</ion-select-option>
+      <ion-select-option value="DOUBTFUL">DOUBTFUL</ion-select-option>
+      <ion-select-option value="LOSS">LOSS</ion-select-option>
+      <ion-select-option value="NA (no related company)">No Information (no history)</ion-select-option>
+
+    </ion-select>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label>Delinquency History of customer in the past 1 year(MAX DPD Qualify) </ion-label>
+    <ion-select ngModel name="oneYearDpd" #oneYearDpd (ionChange)=log(oneYearDpd) placeholder="Select One">
+      <ion-select-option value="
+      0">0</ion-select-option>
+      <ion-select-option value="
+      1-29:less than 2">1-29:less than 2</ion-select-option>
+      <ion-select-option value="
+      1-29:3-5D">1-29:3-5</ion-select-option>
+      <ion-select-option value="1-29:more than ">1-29:more than</ion-select-option>
+      <ion-select-option value="30-59:less than 2">30-59:less than 2</ion-select-option>
+      <ion-select-option value="30-59:3-5">30-59:3-5</ion-select-option>
+      <ion-select-option value="30-59:more than 5">30-59:more than 5</ion-select-option>
+      <ion-select-option value="60-89:less than 2">60-89:less than 2</ion-select-option>
+      <ion-select-option value="60-89:3-5">60-89:3-5</ion-select-option>
+      <ion-select-option value="60-89:more than 5">60-89:more than 5</ion-select-option>
+      <ion-select-option value="above 90 days:1">above 90 days:1</ion-select-option>
+      <ion-select-option value="above 90 days:2 and above">above 90 days:2 and above</ion-select-option>
+      <ion-select-option value="NA (new customer)">NA (new customer)</ion-select-option>
+
+
+
+
+    </ion-select>
+  </ion-item>
+
+
+
+
+  <ion-item>
+    <ion-label>Alizz Customer Relationship in years</ion-label>
+    <ion-select ngModel name="relationYears" #relationYears (ionChange)=log(relationYears) placeholder="Select One">
+      <ion-select-option value="
+        less than 1">Less than 1</ion-select-option>
+      <ion-select-option value="
+        1-3">1-3</ion-select-option>
+      <ion-select-option value="
+        3-5">3-5</ion-select-option>
+      <ion-select-option value="more than 5">More than 5</ion-select-option>
+
+
+    </ion-select>
+  </ion-item>
+
+
+
+
+  <ion-item>
+    <ion-label>Years in Business</ion-label>
+    <ion-select ngModel name="businessYears" #businessYears (ionChange)=log(businessYears) placeholder="Select One">
+      <ion-select-option value="
+          more than 20">More than 20 Years</ion-select-option>
+      <ion-select-option value="
+          10-20">10-20 Years</ion-select-option>
+      <ion-select-option value="
+          3-10">3-10 Years</ion-select-option>
+      <ion-select-option value="0-3">0-3 Years</ion-select-option>
+      <ion-select-option value="  no business">No Business</ion-select-option>
+
+    </ion-select>
+  </ion-item>
+
+</form>
